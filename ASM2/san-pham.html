@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bánh Mộc – Sản Phẩm</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .products { padding: 4.5rem 0; }
+
+  /* Bộ lọc */
+  .filter-bar {
+    display: flex; 
+    gap: 0.6rem; 
+    justify-content: center;
+    flex-wrap: wrap; 
+    margin-bottom: 2.5rem;
+  }
+  .filter-btn {
+    padding: 0.45rem 1.2rem; 
+    border-radius: 999px; 
+    border: 1.5px solid var(--line);
+    background: var(--card-bg); 
+    color: var(--choc-soft); 
+    font-family: var(--font-body);
+    font-size: 0.9rem; 
+    cursor: pointer; 
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--caramel); 
+    border-color: var(--caramel); 
+    color: var(--choc);
+  }
+
+  /* Product card thêm nút */
+  .product-card .product-body .btn {
+    display: block; 
+    text-align: center; 
+    margin-top: 0.9rem;
+    padding: 0.55rem 1rem; 
+    font-size: 0.88rem;
+  }
+
+  /* Badge mới */
+  .badge {
+    display: inline-block; 
+    font-size: 0.72rem; 
+    font-weight: 700;
+    padding: 0.2rem 0.5rem; 
+    border-radius: 999px;
+    background: var(--jam); 
+    color: #fff; 
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+
+  /* Ảnh sản phẩm */
+  .product-img img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Bánh Mộc</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="open-menu" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="san-pham.html" class="active">Sản Phẩm</a></li>
+        <li><a href="dich-vu.html">Dịch Vụ</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="products">
+  <div class="container">
+    <div class="section-head">
+      <h2>Sản phẩm nổi bật</h2>
+      <p>Những chiếc bánh được yêu thích nhất tại tiệm</p>
+    </div>
+
+    <!-- Bộ lọc -->
+    <div class="filter-bar">
+      <button class="filter-btn active">Tất cả</button>
+      <button class="filter-btn">Bánh Pháp</button>
+      <button class="filter-btn">Mousse & Kem</button>
+      <button class="filter-btn">Cookie</button>
+      <button class="filter-btn">Mặn</button>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/croissant.jpg" alt="Croissant Bơ"></div>
+        <div class="product-body">
+          <h3>Croissant Bơ</h3>
+          <p>Vỏ giòn nhiều lớp, thơm mùi bơ Pháp.</p>
+          <span class="price">35.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/sukem.jpg" alt="Bánh Su Kem"></div>
+        <div class="product-body">
+          <h3>Bánh Su Kem</h3>
+          <p>Nhân kem trứng béo nhẹ, vỏ su giòn xốp.</p>
+          <span class="price">25.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/tiramisu.jpg" alt="Tiramisu"></div>
+        <div class="product-body">
+          <h3>Tiramisu <span class="badge">Hot</span></h3>
+          <p>Lớp cà phê đậm, kem mascarpone mềm mịn.</p>
+          <span class="price">55.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/mousse_xoai.jpg" alt="Mousse Xoài"></div>
+        <div class="product-body">
+          <h3>Mousse Xoài <span class="badge">Mới</span></h3>
+          <p>Vị xoài chua ngọt, kết hợp mousse tan mịn.</p>
+          <span class="price">50.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/cookie.jpg" alt="Cookie Socola"></div>
+        <div class="product-body">
+          <h3>Cookie Socola</h3>
+          <p>Giòn rụm bên ngoài, mềm dai bên trong.</p>
+          <span class="price">15.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/red_velvet.jpg" alt="Red Velvet"></div>
+        <div class="product-body">
+          <h3>Red Velvet</h3>
+          <p>Cốt bánh đỏ mềm, phủ kem cheese béo nhẹ.</p>
+          <span class="price">60.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/tart.jpg" alt="Tart Dâu Tây"></div>
+        <div class="product-body">
+          <h3>Tart Dâu Tây <span class="badge">Mới</span></h3>
+          <p>Vỏ tart giòn, kem custard tươi, dâu tây mùa.</p>
+          <span class="price">45.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/banhmi.webp" alt="Bánh Mì Bơ Tỏi"></div>
+        <div class="product-body">
+          <h3>Bánh Mì Bơ Tỏi</h3>
+          <p>Giòn bên ngoài, mềm bên trong, thơm nức bơ tỏi.</p>
+          <span class="price">20.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/mousse_matcha.jpg" alt="Mousse Matcha"></div>
+        <div class="product-body">
+          <h3>Mousse Matcha</h3>
+          <p>Matcha Nhật nguyên chất, đắng nhẹ, mịn tan.</p>
+          <span class="price">52.000đ</span>
+          <a href="lien-he.html" class="btn btn-primary">Đặt ngay</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  © 2026 Bánh Mộc — Làm bằng bột mì và một chút yêu thương 🤍
+</footer>
+
+</body>
+</html>

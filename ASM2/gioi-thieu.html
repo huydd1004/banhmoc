@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bánh Mộc – Giới Thiệu</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ABOUT HERO */
+  .about-hero {
+    background: var(--choc); 
+    color: var(--cream); 
+    padding: 4.5rem 0;
+  }
+  .about-hero .container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 3rem; 
+    align-items: center;
+  }
+  .about-hero h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem); 
+    font-weight: 600;
+    margin-bottom: 1rem; 
+    color: var(--caramel);
+  }
+  .about-hero p { 
+    color: #EFE3D2; 
+    margin-bottom: 1.2rem; 
+  }
+
+  .values { 
+    list-style: none; 
+    display: grid; 
+    gap: 0.7rem; 
+  }
+  .values li { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.6rem; 
+    font-weight: 500; 
+    color: #EFE3D2; 
+  }
+  .values li::before { 
+    content: "✦"; 
+    color: var(--caramel); 
+  }
+
+  /* TIMELINE */
+  .timeline-section { 
+    padding: 4.5rem 0; 
+  }
+  .timeline { 
+    position: relative; 
+    max-width: 680px; 
+    margin: 0 auto; 
+  }
+  .timeline::before {
+    content: ''; 
+    position: absolute; 
+    left: 20px; top: 0; 
+    bottom: 0;
+    width: 2px; 
+    background: var(--line);
+  }
+  .tl-item { display: flex; 
+    gap: 1.4rem; 
+    margin-bottom: 2rem; 
+    position: relative; }
+  .tl-dot {
+    min-width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    background: var(--jam); 
+    color: #fff; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-family: var(--font-display); 
+    font-weight: 700; 
+    font-size: 0.85rem;
+    z-index: 1;
+  }
+  .tl-body h3 { 
+    font-size: 1.05rem; 
+    margin-bottom: 0.3rem; 
+  }
+  .tl-body p { 
+    font-size: 0.9rem; 
+    color: var(--choc-soft); 
+  }
+
+  /* ĐỘI NGŨ */
+  .team { 
+    background: var(--gold-light); 
+    padding: 4.5rem 0; 
+  }
+  .team-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3,1fr); 
+    gap: 1.5rem; 
+  }
+  .team-card {
+    background: var(--card-bg); 
+    border-radius: 16px; 
+    padding: 2rem 1.5rem;
+    text-align: center; 
+    border: 1px solid var(--line);
+  }
+  .team-avatar {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, var(--caramel), var(--jam));
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 2.2rem;
+  }
+  .team-card h3 { 
+    font-size: 1.1rem; 
+    margin-bottom: 0.2rem; 
+  }
+  .team-card .role { 
+    font-size: 0.85rem; 
+    color: var(--jam); 
+    font-weight: 600; 
+    margin-bottom: 0.5rem; 
+  }
+  .team-card p { 
+    font-size: 0.88rem; 
+    color: var(--choc-soft); 
+  }
+
+  @media (max-width: 768px) {
+    .about-hero .container { 
+      grid-template-columns: 1fr; 
+    }
+    .team-grid { 
+      grid-template-columns: 1fr; 
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Bánh Mộc</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="open-menu" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="gioi-thieu.html" class="active">Giới Thiệu</a></li>
+        <li><a href="san-pham.html">Sản Phẩm</a></li>
+        <li><a href="dich-vu.html">Dịch Vụ</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="container">
+    <div>
+      <h1>Câu chuyện của Bánh Mộc</h1>
+      <p>Bánh Mộc bắt đầu từ năm 2019, trong một căn bếp nhỏ ở Sài Gòn —
+         nơi mỗi công thức đều được thử nghiệm và chỉnh lại nhiều lần
+         trước khi đến tay khách.</p>
+      <p>Chúng tôi tin rằng một chiếc bánh ngon không cần quá cầu kỳ —
+         chỉ cần nguyên liệu tốt, thời gian đủ, và một chút yêu thương.</p>
+    </div>
+    <ul class="values">
+      <li>Nguyên liệu tự nhiên, chọn lọc kỹ</li>
+      <li>Làm mới mỗi ngày, không để tủ lạnh lâu</li>
+      <li>Không chất bảo quản, không phụ gia</li>
+      <li>Bao bì thân thiện với môi trường</li>
+      <li>Nhận đặt theo yêu cầu riêng</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Hành trình của chúng tôi</h2>
+      <p>Từ căn bếp nhỏ đến tiệm bánh được yêu mến</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">2019</div>
+        <div class="tl-body">
+          <h3>Khởi đầu từ căn bếp nhỏ</h3>
+          <p>Chị Mộc bắt đầu nướng bánh tặng bạn bè, công thức dần hoàn thiện qua từng mẻ.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2020</div>
+        <div class="tl-body">
+          <h3>Mở bán online đầu tiên</h3>
+          <p>Tiệm ra mắt fanpage và nhận đơn online, ngay tuần đầu đã hết hàng liên tục.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2022</div>
+        <div class="tl-body">
+          <h3>Mở cửa hàng đầu tiên</h3>
+          <p>Địa điểm tại 123 Đường Hoa Mai, Quận 1 — không gian nhỏ xinh, ấm cúng.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2024</div>
+        <div class="tl-body">
+          <h3>Mở lớp học làm bánh</h3>
+          <p>Workshop cuối tuần ra đời, mang công thức bí truyền đến gần hơn với cộng đồng.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2026</div>
+        <div class="tl-body">
+          <h3>Hôm nay</h3>
+          <p>Vẫn nướng bánh mỗi sáng, vẫn giữ tinh thần ít nhưng chất.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ĐỘI NGŨ -->
+<section class="team">
+  <div class="container">
+    <div class="section-head">
+      <h2>Đội ngũ Bánh Mộc</h2>
+      <p>Những người làm ra từng chiếc bánh mỗi ngày</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">👩‍🍳</div>
+        <h3>Đỗ Đức Huy</h3>
+        <div class="role">Người sáng lập & Bếp trưởng</div>
+        <p>10 năm kinh nghiệm làm bánh, từng học tại Paris và Nhật Bản.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👨‍🍳</div>
+        <h3>Lê Bảo Anh</h3>
+        <div class="role">Thợ bánh chính</div>
+        <p>Chuyên về bánh Pháp và bánh nhiều lớp, tay nghề điêu luyện.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">🧁</div>
+        <h3>Đỗ Lê Minh Khôi</h3>
+        <div class="role">Bánh kem & Trang trí</div>
+        <p>Biến mỗi chiếc bánh thành tác phẩm nghệ thuật nhỏ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  © 2026 Bánh Mộc — Làm bằng bột mì và một chút yêu thương 🤍
+</footer>
+
+</body>
+</html>

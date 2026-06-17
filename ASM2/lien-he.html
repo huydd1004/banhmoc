@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bánh Mộc – Liên Hệ</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-page { 
+    background: var(--choc); 
+    color: var(--cream); 
+    padding: 4.5rem 0; 
+  }
+  .contact-page .container {
+    display: grid; 
+    grid-template-columns: 1fr 1.1fr; 
+    gap: 3rem;
+  }
+  .contact-page h1 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem); 
+    font-weight: 600;
+    color: var(--caramel); 
+    margin-bottom: 0.5rem;
+  }
+  .contact-page .sub { 
+    color: #D8C7B4; 
+    margin-bottom: 2rem; 
+  }
+
+  .contact-info { 
+    display: grid; 
+    gap: 1rem; 
+    align-content: start; 
+  }
+  .contact-info .item { 
+    display: flex; 
+    gap: 0.8rem; 
+  }
+  .contact-info .item span:first-child { 
+    font-size: 1.3rem; 
+  }
+  .contact-info .item strong {
+    display: block; 
+    color: var(--caramel); 
+    font-size: 0.85rem;
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+    margin-bottom: 0.15rem;
+  }
+  .contact-info .item p { 
+    color: #EFE3D2; 
+    font-size: 0.95rem; 
+  }
+
+  /* Share Facebook */
+  .share-fb {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+    margin-top: 2rem;
+    background: #1877F2; 
+    border: none; 
+    color: #fff;
+    border-radius: 10px; 
+    padding: 0.55rem 1rem;
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 500;
+    transition: background 0.15s;
+  }
+  .share-fb:hover { background: #0f5fd1; }
+
+  /* Form */
+  .contact-form { 
+    display: grid; 
+    gap: 0.9rem; 
+  }
+  .contact-form .btn { 
+    margin-top: 0.3rem; 
+  }
+
+  /* Map */
+  .map-section { 
+    padding: 2rem 0; 
+    background: var(--choc); 
+  }
+  .map-section iframe { 
+    display: block; 
+    width: 100%; 
+    height: 300px; 
+    border: 0; 
+    border-radius: 12px; 
+  }
+
+  @media (max-width: 768px) {
+    .contact-page .container { grid-template-columns: 1fr; }
+    .socials { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Bánh Mộc</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="open-menu" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="san-pham.html">Sản Phẩm</a></li>
+        <li><a href="dich-vu.html">Dịch Vụ</a></li>
+        <li><a href="lien-he.html" class="active">Liên Hệ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- LIÊN HỆ -->
+<section class="contact-page">
+  <div class="container">
+    <div>
+      <h1>Liên hệ với chúng tôi</h1>
+      <p class="sub">Ghé tiệm, gọi điện, hoặc gửi lời nhắn cho chúng tôi</p>
+
+      <div class="contact-info">
+        <div class="item">
+          <span>📍</span>
+          <div>
+            <strong>Địa chỉ</strong>
+            <p>123 Đường Hoa Mai, Quận 1, TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+        <div class="item">
+          <span>📞</span>
+          <div>
+            <strong>Điện thoại</strong>
+            <p>0909 123 456</p>
+          </div>
+        </div>
+        <div class="item">
+          <span>✉️</span>
+          <div>
+            <strong>Email</strong>
+            <p>hello@banhmoc.vn</p>
+          </div>
+        </div>
+        <div class="item">
+          <span>🕐</span>
+          <div>
+            <strong>Giờ mở cửa</strong>
+            <p>7:00 – 20:00, Thứ Hai – Chủ Nhật</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://banhmoc.vn/lien-he.html"
+         target="_blank" rel="noopener" class="share-fb" aria-label="Chia sẻ lên Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+        Chia sẻ
+      </a>
+    </div>
+
+    <form class="contact-form">
+      <div>
+        <label for="name">Họ và tên</label>
+        <input type="text" id="name" name="name" placeholder="Nguyễn Văn A">
+      </div>
+      <div>
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" name="phone" placeholder="0909 000 000">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com">
+      </div>
+      <div>
+        <label for="subject">Chủ đề</label>
+        <select id="subject" name="subject">
+          <option value="">-- Chọn chủ đề --</option>
+          <option>Đặt bánh sinh nhật</option>
+          <option>Đặt bánh sự kiện / số lượng lớn</option>
+          <option>Đăng ký lớp học làm bánh</option>
+          <option>Góp ý / Khiếu nại</option>
+          <option>Khác</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Lời nhắn</label>
+        <textarea id="message" name="message" placeholder="Bạn muốn đặt loại bánh nào? Số lượng? Ngày cần nhận?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Gửi lời nhắn 📨</button>
+    </form>
+  </div>
+</section>
+
+<!-- BẢN ĐỒ -->
+<section class="map-section">
+  <div class="container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.9661234731407!2d106.77124677614309!3d10.890179089265567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d9e0ef170795%3A0x1b3be231c8830960!2sHAI%20TEE%20COFFEE%20%26%20TEA%20PREMIUM!5e0!3m2!1svi!2s!4v1781615931095!5m2!1svi!2s"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<footer class="site-footer">
+  © 2026 Bánh Mộc — Làm bằng bột mì và một chút yêu thương 🤍
+</footer>
+
+</body>
+</html>

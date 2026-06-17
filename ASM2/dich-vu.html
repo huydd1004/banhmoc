@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bánh Mộc – Dịch Vụ</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .services { 
+    padding: 4.5rem 0; 
+    background: var(--gold-light); 
+  }
+
+  .service-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4,1fr); 
+    gap: 1.4rem; 
+  }
+  .service-card {
+    background: var(--card-bg); 
+    border-radius: 16px; 
+    padding: 1.6rem 1.3rem;
+    text-align: center; 
+    border: 1px solid var(--line);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .service-card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 12px 30px -15px rgba(60,30,10,0.25); 
+  }
+  .service-card .icon { 
+    font-size: 2.4rem; 
+    margin-bottom: 0.7rem; 
+  }
+  .service-card h3 { 
+    font-size: 1.05rem; 
+    margin-bottom: 0.4rem; 
+  }
+  .service-card p { 
+    font-size: 0.88rem; 
+    color: var(--choc-soft); 
+    margin-bottom: 1rem; 
+  }
+  .service-card .btn { 
+    font-size: 0.85rem; 
+    padding: 0.5rem 1.1rem; 
+  }
+
+  /* Pricing */
+  .pricing { 
+    padding: 4.5rem 0; 
+  }
+  .pricing-grid { display: grid; 
+    grid-template-columns: repeat(3,1fr); 
+    gap: 1.5rem; 
+  }
+  .plan-card {
+    background: var(--card-bg); 
+    border: 1px solid var(--line);
+    border-radius: 18px; 
+    padding: 2rem 1.5rem; 
+    text-align: center;
+  }
+  .plan-card.featured {
+    background: var(--choc); 
+    color: var(--cream);
+    border-color: var(--choc);
+  }
+  .plan-card.featured h3, .plan-card.featured .plan-price { 
+    color: var(--caramel); 
+  }
+  .plan-card.featured p, .plan-card.featured ul li { 
+    color: #EFE3D2; 
+  }
+  .plan-name { 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.12em; 
+    font-weight: 600; 
+    color: var(--jam); 
+    margin-bottom: 0.5rem; 
+  }
+  .plan-card.featured .plan-name { 
+    color: var(--caramel); 
+  }
+  .plan-card h3 { 
+    font-size: 1.3rem; 
+    margin-bottom: 0.3rem; 
+  }
+  .plan-price { 
+    font-size: 2rem; 
+    font-family: var(--font-display); 
+    font-weight: 700; 
+    color: var(--jam); 
+    margin-bottom: 0.3rem; 
+  }
+  .plan-price span { 
+    font-size: 0.9rem; 
+    font-weight: 400; 
+    color: var(--choc-soft); 
+  }
+  .plan-card ul { 
+    list-style: none; 
+    text-align: left; 
+    margin: 1.2rem 0 1.5rem; 
+    display: grid; 
+    gap: 0.5rem; 
+  }
+  .plan-card ul li { 
+    font-size: 0.9rem; 
+    color: var(--choc-soft); 
+  }
+  .plan-card ul li::before { 
+    content: "✓ "; 
+    color: var(--jam); 
+    font-weight: 700; 
+  }
+  .plan-card.featured ul li::before { 
+    color: var(--caramel); 
+  }
+  .plan-card .btn { 
+    width: 100%; 
+    text-align: center; 
+  }
+
+  /* FAQ */
+  .faq { 
+    padding: 4rem 0; 
+    background: var(--cream); 
+  }
+  .faq-list { 
+    max-width: 700px; 
+    margin: 0 auto; 
+    display: grid; 
+    gap: 1rem; 
+  }
+  .faq-item { 
+    border: 1px solid var(--line); 
+    border-radius: 12px; 
+    overflow: hidden; 
+  }
+  .faq-q {
+    padding: 1rem 1.3rem; 
+    font-weight: 600; 
+    cursor: pointer;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    background: var(--card-bg);
+  }
+  .faq-q::after {
+     content: "＋"; 
+     color: var(--jam); 
+     font-size: 1.2rem; 
+    }
+  .faq-a { 
+    padding: 0 1.3rem 1rem; 
+    font-size: 0.92rem; 
+    color: var(--choc-soft); 
+    background: var(--card-bg); 
+  }
+
+  @media (max-width: 768px) {
+    .service-grid { grid-template-columns: repeat(2,1fr); }
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .service-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Bánh Mộc</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="open-menu" aria-label="Mở menu">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="san-pham.html">Sản Phẩm</a></li>
+        <li><a href="dich-vu.html" class="active">Dịch Vụ</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- DỊCH VỤ -->
+<section class="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Dịch vụ</h2>
+      <p>Bánh Mộc luôn sẵn sàng cho mọi dịp của bạn</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon">🚲</div>
+        <h3>Giao hàng nhanh</h3>
+        <p>Giao trong nội thành trong vòng 2 giờ, đảm bảo bánh còn tươi ngon.</p>
+        <a href="lien-he.html" class="btn btn-primary">Đặt giao</a>
+      </div>
+      <div class="service-card">
+        <div class="icon">🎂</div>
+        <h3>Bánh theo yêu cầu</h3>
+        <p>Thiết kế bánh sinh nhật, bánh cưới riêng theo ý thích của bạn.</p>
+        <a href="lien-he.html" class="btn btn-primary">Tư vấn</a>
+      </div>
+      <div class="service-card">
+        <div class="icon">🎉</div>
+        <h3>Đặt số lượng lớn</h3>
+        <p>Phù hợp cho sự kiện, hội nghị, tiệc công ty. Giảm giá từ 50 cái.</p>
+        <a href="lien-he.html" class="btn btn-primary">Báo giá</a>
+      </div>
+      <div class="service-card">
+        <div class="icon">👩‍🍳</div>
+        <h3>Lớp học làm bánh</h3>
+        <p>Workshop cuối tuần cho người mới bắt đầu, tối đa 8 học viên/lớp.</p>
+        <a href="lien-he.html" class="btn btn-primary">Đăng ký</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GÓI DỊCH VỤ -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-head">
+      <h2>Gói đặt bánh</h2>
+      <p>Chọn gói phù hợp với nhu cầu của bạn</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-name">Cá nhân</div>
+        <h3>Lẻ tẻ</h3>
+        <div class="plan-price">0đ <span>/ phí thêm</span></div>
+        <ul>
+          <li>Mua từng cái theo menu</li>
+          <li>Nhận tại tiệm hoặc giao hàng</li>
+          <li>Thanh toán khi nhận</li>
+        </ul>
+        <a href="san-pham.html" class="btn btn-outline">Xem menu</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-name">Phổ biến nhất</div>
+        <h3>Combo Tuần</h3>
+        <div class="plan-price">350.000đ <span>/ tuần</span></div>
+        <ul>
+          <li>10 bánh tự chọn mỗi tuần</li>
+          <li>Giao miễn phí nội thành</li>
+          <li>Ưu tiên bánh mới ra lò</li>
+          <li>Tặng 1 ly cà phê mỗi tuần</li>
+        </ul>
+        <a href="lien-he.html" class="btn btn-primary">Đăng ký ngay</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Doanh nghiệp</div>
+        <h3>Sự kiện</h3>
+        <div class="plan-price">Thỏa thuận</div>
+        <ul>
+          <li>Từ 50 bánh trở lên</li>
+          <li>Thiết kế logo/thương hiệu</li>
+          <li>Giao đúng giờ sự kiện</li>
+          <li>Hóa đơn VAT đầy đủ</li>
+        </ul>
+        <a href="lien-he.html" class="btn btn-outline">Liên hệ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Câu hỏi thường gặp</h2>
+      <p>Những thắc mắc phổ biến nhất từ khách hàng</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Bánh có thể để được bao lâu?</div>
+        <div class="faq-a">Bánh tươi nên dùng trong ngày. Mousse và kem để ngăn mát được 2–3 ngày. Cookie giòn để nhiệt độ phòng được 5–7 ngày.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Có đặt bánh sinh nhật theo thiết kế riêng không?</div>
+        <div class="faq-a">Có! Bạn nhắn mẫu thiết kế hoặc ý tưởng qua form Liên Hệ, đặt trước ít nhất 3 ngày. Chúng mình sẽ tư vấn thêm về kích thước và giá.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Giao hàng có tính phí không?</div>
+        <div class="faq-a">Đơn từ 150.000đ trở lên được miễn phí giao trong bán kính 5km. Ngoài khu vực tính phí theo khoảng cách thực tế.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Lớp học làm bánh học trong bao lâu?</div>
+        <div class="faq-a">Mỗi buổi workshop kéo dài 3 tiếng, bao gồm lý thuyết + thực hành. Học viên được mang sản phẩm về nhà sau buổi học.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  © 2026 Bánh Mộc — Làm bằng bột mì và một chút yêu thương 🤍
+</footer>
+
+</body>
+</html>
